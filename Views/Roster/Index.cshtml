@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Critters.Models.Roster>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @using (Html.BeginForm("Index", "Roster", FormMethod.Get))
+    {
+        <p>
+            Position: @Html.TextBox("position")
+            City: @Html.DropDownList("birthcity", "All")
+            State: @Html.DropDownList("birthstate", "All")
+            From Year: @Html.TextBox("fromYear")
+            To Year: @Html.TextBox("toYear") <br/>
+            From Weight: @Html.TextBox("fromWeight")
+            To Weight: @Html.TextBox("toWeight")
+            From Height: @Html.TextBox("fromHeight")
+            To Height: @Html.TextBox("toHeight")
+            <input type="submit" value="Filter" />
+        </p>
+    }   
+</p>
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.jersey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.birthday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.birthcity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.birthstate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.jersey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.birthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.birthcity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.birthstate)
+        </td>
+    </tr>
+}
+
+</table>

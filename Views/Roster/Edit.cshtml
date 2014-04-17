@@ -1,0 +1,106 @@
+﻿@model Critters.Models.Roster
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Roster</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.playerid)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.jersey, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.jersey)
+                @Html.ValidationMessageFor(model => model.jersey)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fname, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fname)
+                @Html.ValidationMessageFor(model => model.fname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sname, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sname)
+                @Html.ValidationMessageFor(model => model.sname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.position, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.position)
+                @Html.ValidationMessageFor(model => model.position)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.birthday, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.birthday)
+                @Html.ValidationMessageFor(model => model.birthday)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.height, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.height)
+                @Html.ValidationMessageFor(model => model.height)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.weight, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.weight)
+                @Html.ValidationMessageFor(model => model.weight)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.birthcity, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.birthcity)
+                @Html.ValidationMessageFor(model => model.birthcity)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.birthstate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.birthstate)
+                @Html.ValidationMessageFor(model => model.birthstate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
