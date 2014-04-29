@@ -26,5 +26,11 @@ namespace Critters.Controllers
 
             return View();
         }
+
+        public ActionResult AccessDb()
+        {
+            return View();
+        }
+
     }
 }

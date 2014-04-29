@@ -10,18 +10,16 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Critters Db</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Предоставить возможность пользователю с помощью раскрывающихся списков и строк ввода выбрать: позицию игрока, год рождения с ... по, вес от ... до, страну рождения, город рождения. После нажатия кнопки Показать, визуализировать списки, удовлетворяющие условиям.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p class="btn btn-default">@Html.ActionLink("Critters", "Index", "Roster/Index")</p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Search in xml</h2>
+        <p>Для данного xml-документа и данного текста найти все узлы, содержащие текст в качестве значения одного из своих аттрибутов.</p>
+        <p class="btn btn-default">@Html.ActionLink("Home", "Index", "Home")</p>
     </div>
     <div class="col-md-4">
         <h2>Web Hosting</h2>
