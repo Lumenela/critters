@@ -9,8 +9,14 @@
     @using (Html.BeginForm("Index", "XMLSearch", FormMethod.Get))
     {
     <p>
-        Position: @Html.TextBox("searchString")
+        @Html.TextBox("searchString")
         <input type="submit" value="Search" />
     </p>
     }
 </p>
+
+@Html.TextArea("XmlContainer", new
+{
+   @readonly="readonly",
+    style = "width: 1000px; height: 300px;"
+})
