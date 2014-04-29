@@ -21,12 +21,30 @@ namespace Critters.Controllers
             }
             else
             {
-             /*   string text = "";
-                IEnumerable<XElement> books =
-                from el in root.Elements("book")
-                select el;
-                foreach (XElement el in books)
-                    text += "\n" + el;*/
+                IEnumerable<IEnumerable<XElement>> booksFound =
+                    from book in root.Elements()
+                    where (from p in book.Descendants()
+                           where p.Value.Contains(searchString)
+                           select p).Any()
+                    select book.DescendantsAndSelf().Where(p => p.Value.Contains(searchString)).ToArray();
+
+
+                string text = "";
+                foreach (IEnumerable<XElement> el in booksFound)
+                {
+                    foreach (XElement l in el)
+                    {
+                        string pathToElement = l.Name + ">" + l.Value;
+                        XElement parent = l.Parent;
+                        while (parent != null)
+                        {
+                            pathToElement = parent.Name + ">" + pathToElement;
+                            parent = parent.Parent;
+                        }
+                        text += pathToElement + "\n";
+                    }
+                }
+                ViewBag.XmlContainer = text;
             }
             
             
