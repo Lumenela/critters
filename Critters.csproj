@@ -162,6 +162,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\XMLSearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,7 +188,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Views\RosterController.cs" />
+    <Compile Include="Controllers\RosterController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\CRITTERS_DB.MDB" />
@@ -258,6 +259,7 @@
     <Content Include="Views\Roster\Details.cshtml" />
     <Content Include="Views\Roster\Edit.cshtml" />
     <Content Include="Views\Roster\Index.cshtml" />
+    <Content Include="Views\XMLSearch\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

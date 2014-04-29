@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search XML</h2>
+<p>
+    @using (Html.BeginForm("Index", "XMLSearch", FormMethod.Get))
+    {
+    <p>
+        Position: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </p>
+    }
+</p>
